@@ -35,7 +35,7 @@ func main() {
     fmt.Println(string(text))
     */
 
-    commitCode("https://github.com/CatherineLi0531/Commit-String-Test.git")
+    commitCode("https://github.com/CatherineLi0531/Hello-World.git")
 }
 
 func commitCode(githubUrl string) (*string) {
@@ -78,9 +78,14 @@ func commitCode(githubUrl string) (*string) {
         os.Exit(1)
     }
 	commit := commits[0].Sha
-    
-    fmt.Println(commit);
+    fmt.Println("Full Commit Code: " + commit)
 
+    fmt.Print("Shortened: ")
+    short:= ""
+    for i := 0; i < 6; i++ {
+        short+=string(commit[i])
+    }
+    fmt.Println(short)
     return nil
 }
 
